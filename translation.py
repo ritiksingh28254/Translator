@@ -1,10 +1,10 @@
 import os
 import streamlit as st
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import google.generativeai as gpt
 
 # Load environment variables
-load_dotenv()
+#load_dotenv()
 
 # Configure Streamlit page settings
 st.set_page_config(
@@ -14,7 +14,8 @@ st.set_page_config(
 )
 
 # Get API Key from .env file
-API_KEY = os.getenv("API_KEY")  # Ensure you have the API_KEY in your .env
+API_KEY = st.secrets["API_KEY"]
+#API_KEY = os.getenv("API_KEY")  # Ensure you have the API_KEY in your .env
 
 # Set up Google Gemini AI model
 gpt.configure(api_key=API_KEY)
